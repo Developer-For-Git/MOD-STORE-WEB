@@ -1,0 +1,28 @@
+{
+  "name": "MOD Store",
+  "short_name": "MOD Store",
+  "description": "Discover, browse, and analyze premium mods and apps for Android, PC, and TV.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#DC143C",
+  "background_color": "#0D0D0D",
+  "lang": "en",
+  "categories": ["utilities", "entertainment", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": []
+}

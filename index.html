@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MOD Store — Discover and browse premium mods and apps for Android, PC, and TV without downloading the store APK.">
+  <meta name="theme-color" content="#DC143C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MOD Store">
+  <meta property="og:title" content="MOD Store — Premium App Catalog">
+  <meta property="og:description" content="Discover premium mods and apps for Android, PC, and TV.">
+  <meta property="og:type" content="website">
+  <title>MOD Store — Premium App Catalog</title>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(r => r.forEach(reg => reg.unregister()));
+    }
+  </script>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css?v=12">
+  <link rel="stylesheet" href="css/tokens.css?v=12">
+  <link rel="stylesheet" href="css/animations.css?v=12">
+  <link rel="stylesheet" href="css/components.css?v=12">
+</head>
+<body>
+
+<div class="app-shell" id="appShell">
+
+  <!-- ── SIDEBAR (desktop) ───────────────────────── -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#lg)" stroke-width="1.5"/>
+            <path d="M16 7L23 11V19L16 23L9 19V11L16 7Z" fill="url(#lg)" opacity="0.7"/>
+            <defs>
+              <linearGradient id="lg" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF1744"/><stop offset="1" stop-color="#9B0F2B"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">MOD</span>
+          <span class="logo-sub">STORE</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-view="catalog" aria-label="Catalog">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/></svg>
+        <span class="nav-label">Catalog</span>
+      </button>
+      <button class="nav-item" data-view="insights" aria-label="Insights">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M3 17L8 12L12 16L17 9L21 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="13" r="1.5" fill="currentColor"/></svg>
+        <span class="nav-label">Insights</span>
+      </button>
+      <button class="nav-item" data-view="favorites" aria-label="Favorites">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="nav-label">Favorites</span>
+      </button>
+      <button class="nav-item" data-view="support" aria-label="Support">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-label">Support</span>
+      </button>
+      <button class="nav-item" data-view="settings" aria-label="Settings">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="nav-label">Settings</span>
+      </button>
+      <button class="nav-item" data-view="about" aria-label="About">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 16v-4m0-4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="nav-label">About</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="connection-status" id="connectionStatus">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Online</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── MAIN CONTENT ───────────────────────────── -->
+  <main class="main-content" id="mainContent">
+    <div class="view-container" id="viewContainer">
+      <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="url(#ll)" stroke-width="1.5"/>
+            <path d="M16 7L23 11V19L16 23L9 19V11L16 7Z" fill="url(#ll)" opacity="0.8"/>
+            <defs><linearGradient id="ll" x1="4" y1="2" x2="28" y2="30"><stop stop-color="#FF1744"/><stop offset="1" stop-color="#9B0F2B"/></linearGradient></defs>
+          </svg>
+        </div>
+        <p class="loading-text">Loading catalog…</p>
+        <div class="loading-bar"><div class="loading-bar-fill" id="loadingBarFill"></div></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── BOTTOM NAV (mobile) ───────────────────── -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Mobile navigation">
+    <button class="bottom-nav-item active" data-view="catalog" aria-label="Catalog">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor" opacity="0.5"/></svg>
+      <span>Catalog</span>
+    </button>
+    <button class="bottom-nav-item" data-view="insights" aria-label="Insights">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 17L8 12L12 16L17 9L21 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="13" r="1.5" fill="currentColor"/></svg>
+      <span>Insights</span>
+    </button>
+    <button class="bottom-nav-item" data-view="favorites" aria-label="Favorites">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span>Favorites</span>
+    </button>
+    <button class="bottom-nav-item" data-view="support" aria-label="Support">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Support</span>
+    </button>
+    <button class="bottom-nav-item" data-view="settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.8"/></svg>
+      <span>Settings</span>
+    </button>
+    <button class="bottom-nav-item" data-view="about" aria-label="About">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 16v-4m0-4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>About</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ── DETAIL MODAL ──────────────────────────────── -->
+<div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="detailModalTitle">
+  <div class="modal-container" id="detailModalContainer">
+    <button class="modal-back" id="detailModalBack" aria-label="Go Back">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="modal-close" id="detailModalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div id="detailModalContent"></div>
+  </div>
+</div>
+
+<!-- ── CONFIG MODAL ──────────────────────────────── -->
+<div class="modal-overlay" id="configModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-container modal-sm">
+    <div class="modal-header">
+      <h2 class="modal-title">📡 Catalog Source</h2>
+      <button class="modal-close" id="configModalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-content">
+      <div class="form-group">
+        <label for="configUrlInput" class="form-label">Catalog JSON URL</label>
+        <input type="url" id="configUrlInput" class="form-input" placeholder="https://example.com/catalog.json" autocomplete="off">
+        <p class="form-hint">Point to any JSON endpoint matching the MOD Store schema. Leave empty to use the built-in sample catalog.</p>
+      </div>
+      <div class="form-actions">
+        <button class="btn-secondary" id="configCancelBtn">Cancel</button>
+        <button class="btn-primary" id="configLoadBtn">Load Catalog</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST CONTAINER ───────────────────────────── -->
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+<script type="module" src="js/app.js?v=12"></script>
+</body>
+</html>
