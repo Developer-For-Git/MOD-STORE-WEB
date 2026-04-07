@@ -1,0 +1,75 @@
+:root {
+  /* Backgrounds */
+  --bg: #0D0D0D;
+  --bg-2: #111111;
+  --bg-3: #161618;
+
+  /* Crimson Palette */
+  --crimson: #DC143C;
+  --crimson-light: #FF1744;
+  --crimson-dark: #9B0F2B;
+  --crimson-dim: rgba(220,20,60,0.12);
+  --crimson-glow: rgba(220,20,60,0.30);
+
+  /* Surfaces (Glass) */
+  --surface: rgba(255,255,255,0.045);
+  --surface-2: rgba(255,255,255,0.07);
+  --surface-3: rgba(255,255,255,0.10);
+  --surface-hover: rgba(255,255,255,0.08);
+  --surface-crimson: rgba(220,20,60,0.10);
+
+  /* Text */
+  --text: #FFFFFF;
+  --text-2: rgba(255,255,255,0.65);
+  --text-3: rgba(255,255,255,0.40);
+  --text-crimson: #FF4466;
+
+  /* Borders */
+  --border: rgba(255,255,255,0.08);
+  --border-2: rgba(255,255,255,0.13);
+  --border-crimson: rgba(220,20,60,0.35);
+
+  /* Glass FX */
+  --blur: blur(16px);
+  --blur-sm: blur(8px);
+  --blur-lg: blur(32px);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.4);
+  --shadow: 0 4px 20px rgba(0,0,0,0.55);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.7);
+  --shadow-xl: 0 16px 60px rgba(0,0,0,0.8);
+  --shadow-crimson: 0 4px 24px rgba(220,20,60,0.28);
+  --glow-crimson: 0 0 24px rgba(220,20,60,0.45), 0 0 60px rgba(220,20,60,0.15);
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-full: 9999px;
+
+  /* Spacing */
+  --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.25rem; --sp-6: 1.5rem; --sp-8: 2rem; --sp-10: 2.5rem;
+  --sp-12: 3rem; --sp-16: 4rem;
+
+  /* Transitions */
+  --t-fast: 120ms cubic-bezier(0.4,0,0.2,1);
+  --t: 200ms cubic-bezier(0.4,0,0.2,1);
+  --t-slow: 320ms cubic-bezier(0.4,0,0.2,1);
+  --t-spring: 400ms cubic-bezier(0.34,1.56,0.64,1);
+
+  /* Layout */
+  --sidebar-w: 224px;
+  --bottom-nav-h: 70px;
+  --z-sticky: 200;
+  --z-modal-bg: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}
